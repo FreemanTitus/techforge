@@ -4,10 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+    <!-- Primary Meta Tags -->
     <title>Techforge Technologies - IT Solutions & Services</title>
+    <meta name="title" content="Techforge Technologies - IT Solutions & Services">
+    <meta name="description" content="Techforge Technologies provides comprehensive IT solutions including website development, software development, computer sales, and repair services. Transform your business with our expert IT services.">
+    <meta name="keywords" content="website development, software development, computer sales, IT services, computer repair, tech solutions, web development company, software company, computer accessories">
+    <meta name="author" content="Techforge Technologies">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techforgetech.com/">
+    <meta property="og:title" content="Techforge Technologies - IT Solutions & Services">
+    <meta property="og:description" content="Comprehensive IT solutions including website development, software development, computer sales, and repair services.">
+    <meta property="og:image" content="https://techforgetech.com/static/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Techforge Technologies">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://techforge-mo3a.onrender.com/">
+    <meta property="twitter:title" content="Techforge Technologies - IT Solutions & Services">
+    <meta property="twitter:description" content="Comprehensive IT solutions including website development, software development, computer sales, and repair services.">
+    <meta property="twitter:image" content="https://techforge-mo3a.onrender.com/static/images/twitter-image.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="hstatic/images/techforge.jpg/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Techforge Technologies",
+        "url": "https://techforge-mo3a.onrender.com",
+        "logo": "https://techforge-mo3a.onrender.com/static/images/logo.png",
+        "description": "Comprehensive IT solutions including website development, software development, computer sales, and repair services.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "After Alizaga Filling Station Lafia Road, Akwanga",
+            "addressLocality": "Innovation City",
+            "addressCountry": "NG"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+234-906-349-4287",
+            "contactType": "customer service",
+            "email": "dev.techforge1@gmail.com",
+            "areaServed": "Worldwide",
+            "availableLanguage": "English"
+        },
+        "offers": {
+            "@type": "Offer",
+            "description": "IT Solutions and Services"
+        }
+    }
+    </script>
+    
+    <!-- Additional Service-specific Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Website Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Techforge Technologies"
+        },
+        "description": "Professional website development services including responsive design, e-commerce solutions, and custom web applications.",
+        "areaServed": "Worldwide"
+    }
+    </script>
+
+     <style>
         /* Base Styles */
         * {
             margin: 0;

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: ttps://techforge-mo3a.onrender.com/sitemap.xml
