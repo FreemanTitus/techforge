@@ -227,6 +227,7 @@
             color: white;
             font-weight: bold;
             font-size: 1.5rem;
+            position: relative;
         }
 
         .logo-img {
@@ -252,6 +253,15 @@
         font-weight: 400;
         opacity: 0.9;
     }
+    /* BN Number - Hidden on desktop by default */
+    .bn-number {
+        display: none;
+        font-size: 0.7rem;
+        color: #f8fafc;
+        font-weight: 400;
+        margin-left: 8px;
+        padding: 2px 6px;
+    }
 
         
         .navbar {
@@ -261,19 +271,7 @@
             padding: 20px 0;
         }
         
-        /* .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #60a5fa, #2563eb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
         
-        .logo span {
-            color: #f8fafc;
-            -webkit-text-fill-color: #f8fafc;
-        } */
         
         .nav-links {
             display: flex;
@@ -671,6 +669,12 @@
         .logo-secondary {
             font-size: 0.8rem;
         }
+        .bn-number {
+            display: inline-block;
+            position: absolute;
+            bottom: -5px;
+            left: 12px;
+        }
         }
         @media (max-width: 480px) {
         .logo-text {
@@ -683,6 +687,22 @@
 
         .container {
             padding: 0 15px;
+        }
+        .bn-number {
+            margin-left: 6px;
+            font-size: 0.65rem;
+            padding: 1px 4px;
+        }
+    }
+    /* Extra small screens */
+    @media (max-width: 360px) {
+        .logo-img {
+            height: 30px;
+        }
+
+        .bn-number {
+            font-size: 0.6rem;
+            margin-left: 4px;
         }
     }
     </style>
@@ -700,6 +720,7 @@
                             <span class="logo-primary">Techforge</span>
                             <span class="logo-secondary">Technologies</span>
                         </span>
+                        <span class="bn-number">BN8070303</span>
                     </a>
                 </div>
 
@@ -911,7 +932,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Techforge Technologies. All rights reserved.</p>
+                <p>&copy; {% now "Y" %} Techforge Technologies. All rights reserved.</p>
             </div>
         </div>
     </footer>
