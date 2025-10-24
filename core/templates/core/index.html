@@ -214,6 +214,45 @@
             top: 0;
             z-index: 1000;
         }
+        /* Logo Styles */
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo-img {
+            height: 70px;
+            width: auto;
+            margin-right: 10px;
+        }
+        .logo-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+    }
+
+    .logo-primary {
+        color: #3b82f6;
+        font-size: 1.4rem;
+        font-weight: 800;
+    }
+
+    .logo-secondary {
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+
         
         .navbar {
             display: flex;
@@ -222,7 +261,7 @@
             padding: 20px 0;
         }
         
-        .logo {
+        /* .logo {
             font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(90deg, #60a5fa, #2563eb);
@@ -234,7 +273,7 @@
         .logo span {
             color: #f8fafc;
             -webkit-text-fill-color: #f8fafc;
-        }
+        } */
         
         .nav-links {
             display: flex;
@@ -621,7 +660,31 @@
                 max-width: 300px;
                 text-align: center;
             }
+             .logo-img {
+            height: 35px;
         }
+
+        .logo-primary {
+            font-size: 1.2rem;
+        }
+
+        .logo-secondary {
+            font-size: 0.8rem;
+        }
+        }
+        @media (max-width: 480px) {
+        .logo-text {
+            display: none; /* Hide text, show only logo image on very small screens */
+        }
+
+        .logo-img {
+            margin-right: 0;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -629,7 +692,18 @@
     <header class="glass">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Techforge<span>Technologies</span></a>
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <a href="#" class="logo">
+                        <img src="{% static 'images/logo-white.png' %}" alt="Techforge Technologies" class="logo-img">
+                        <span class="logo-text">
+                            <span class="logo-primary">Techforge</span>
+                            <span class="logo-secondary">Technologies</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -637,6 +711,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+
+                <!-- Mobile Menu -->
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
