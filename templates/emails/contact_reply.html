@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; background: white; }
+        .header { 
+            color: #333; 
+            padding: 30px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .logo-container {
+            flex-shrink: 0;
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        .header-content {
+            text-align: right;
+        }
+        .header h1 {
+            margin: 0 0 5px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .content { background: #f8f9fa; padding: 30px; }
+        .footer { text-align: center; padding: 20px; color: #64748b; font-size: 14px; background: white; }
+        .message { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2563eb; }
+        .original-message { background: #f1f5f9; padding: 15px; border-radius: 5px; margin: 15px 0; font-size: 14px; }
+        .signature { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
+        
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .header-content {
+                text-align: center;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <!-- Replace with your actual logo URL -->
+                <img src="https://res.cloudinary.com/dcyk2wzo2/image/upload/v1761320100/logo_ckgwsq.png" alt="Techforge Technologies" 
+                    class="logo" style="max-width: 150px; height: auto;">
+            </div>
+            <div class="header-content">
+                <h1>Response to Your Inquiry</h1>
+                <p>We're here to help</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p>Dear {{ contact_name }},</p>
+            
+            <div class="message">
+                {{ reply_message|linebreaks }}
+            </div>
+            
+            <div class="signature">
+                <p><strong>Best regards,</strong><br>
+                The Techforge Technologies Team</p>
+                
+                <p style="margin-top: 20px;">
+                    <strong>Techforge Technologies</strong><br>
+                    After Alizaga Filling Station Lafia Road, Akwanga<br>
+                    Phone: (234) 906-349-4287<br>
+                    Email: dev.techforge1@gmail.com<br>
+                    Website: www.techforgetech.com
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; {% now "Y" %} Techforge Technologies. All rights reserved.</p>
+            <p>This email was sent in response to your inquiry on our website.</p>
+        </div>
+    </div>
+</body>
+</html>

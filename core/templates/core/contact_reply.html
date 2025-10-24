@@ -1,0 +1,103 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+{% block extrastyle %}
+{{ block.super }}
+<style>
+    .reply-form {
+        background: #191c1f;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    .form-field {
+        margin-bottom: 15px;
+    }
+    .form-field label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .form-field input, .form-field textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: 'Inter', Arial, sans-serif;
+    }
+    .form-field textarea {
+        height: 200px;
+        resize: vertical;
+    }
+    .original-message {
+        background: #191c1f;
+        padding: 15px;
+        border-left: 4px solid #007cba;
+        margin-bottom: 20px;
+    }
+    .template-tips {
+        background: #191c1f;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #2563eb;
+    }
+    .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <h1>Reply to {{ contact.name }}</h1>
+    
+    <div class="template-tips">
+        <h3>💡 Template Tips:</h3>
+        <ul>
+            <li>Use <code>{{ contact_name }}</code> - Will be replaced with the contact's name</li>
+            <li>Use <code>{{ original_subject }}</code> - Will be replaced with their original subject</li>
+            <li>The email will be automatically formatted with our professional template</li>
+        </ul>
+    </div>
+    
+    <div class="original-message">
+        <h3>Original Message:</h3>
+        <p><strong>From:</strong> {{ contact.name }} ({{ contact.email }})</p>
+        <p><strong>Phone:</strong> {{ contact.phone|default:"Not provided" }}</p>
+        <p><strong>Company:</strong> {{ contact.company|default:"Not provided" }}</p>
+        <p><strong>Subject:</strong> {{ contact.subject }}</p>
+        <p><strong>Message:</strong></p>
+        <p>{{ contact.message|linebreaks }}</p>
+        <p><strong>Received:</strong> {{ contact.created_at }}</p>
+    </div>
+    
+    <form method="post" class="reply-form">
+        {% csrf_token %}
+        
+        <div class="form-field">
+            <label for="reply_subject">Subject:</label>
+            <input type="text" id="reply_subject" name="reply_subject" value="{{ default_subject }}" required>
+        </div>
+        
+        <div class="form-field">
+            <label for="reply_message">Your Reply:</label>
+            <textarea id="reply_message" name="reply_message" placeholder="Type your reply message here..." required>{{ default_message }}</textarea>
+            <small>This will be inserted into our professional email template.</small>
+        </div>
+        
+        <div class="form-field">
+            <label for="admin_notes">Admin Notes (Internal):</label>
+            <textarea id="admin_notes" name="admin_notes" placeholder="Add any internal notes about this contact...">{{ contact.admin_notes|default:'' }}</textarea>
+        </div>
+        
+        <div class="button-group">
+            <input type="submit" value="Send Email" class="default" name="send_email">
+            <input type="submit" value="Save Draft" name="save_draft">
+            <a href="../" class="button">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

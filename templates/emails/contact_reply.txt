@@ -1,0 +1,21 @@
+Dear {{ contact_name }},
+
+{{ reply_message }}
+
+Best regards,
+The Techforge Technologies Team
+
+---
+Techforge Technologies
+123 Tech Street, Innovation City
+Phone: +1 (234) 567-8900
+Email: info@techforgetech.com
+Website: www.techforgetech.com
+
+---
+Original Message Reference:
+Subject: {{ original_subject }}
+Date: {{ original_date }}
+
+Your Message:
+{{ original_message }}
